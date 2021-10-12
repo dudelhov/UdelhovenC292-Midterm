@@ -1,0 +1,13 @@
+General Art and Player Sprites - https://www.kenney.nl/assets/platformer-art-pixel-redux
+
+this one ^ specifically includes:
+	character sprites
+	enemy sprites
+	laser guns
+	general platformer art including platforms, switches, keys/locks, buttons, lasers/laser flashes, etc
+
+Background art - https://www.kenney.nl/assets/background-elements-redux
+
+Gun sound effect - https://opengameart.org/content/laser-fire-0
+
+Background Music - https://opengameart.org/content/sleep-talking-loop-fantasy-rpg-sci-fi
