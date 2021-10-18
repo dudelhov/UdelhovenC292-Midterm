@@ -26,11 +26,14 @@ public class Player : MonoBehaviour
         {
             //Move Right
             transform.position += new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
         {
             //Move Left
             transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetButtonDown("Jump"))
         {
