@@ -5,11 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] float _moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 5;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -17,13 +18,18 @@ public class Player : MonoBehaviour
     {
         Movement();
     }
-
     void Movement()
     {
-        Vector3 sidewaysMovementVector = transform.right * Input.GetAxis("Horizontal");
-        Vector3 movementVector = sidewaysMovementVector;
-
-
-        GetComponent<CharacterController>().Move(movementVector * _moveSpeed * Time.deltaTime);
+        if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") > 0)
+        {
+            //Move Right
+            transform.position += new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+        }
+        else if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
+        {
+            //Move Left
+            transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+        }
     }
+
 }
