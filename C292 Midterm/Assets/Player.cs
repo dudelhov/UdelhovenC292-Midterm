@@ -6,7 +6,9 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] float moveSpeed = 5;
+    [SerializeField] float jumpForce = 800;
     Rigidbody2D rb;
+    bool isGrounded;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,10 @@ public class Player : MonoBehaviour
         {
             //Move Left
             transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb.AddForce(new Vector2(0, jumpForce));
         }
     }
 
