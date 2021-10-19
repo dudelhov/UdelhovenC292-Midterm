@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BackgroundFollow : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    [SerializeField] float offsetY;
+    [SerializeField] Transform cameraPos;
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + offsetY, 1);
+        transform.position = new Vector3(cameraPos.transform.position.x, cameraPos.transform.position.y, 1);
     }
 }

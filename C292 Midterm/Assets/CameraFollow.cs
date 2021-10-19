@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float offsetY;
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + offsetY, -10);
+        Vector3 playerVector = new Vector3(player.transform.position.x, player.transform.position.y + offsetY, -10);
+        transform.position = Vector3.Lerp(transform.position, playerVector, .05f);
     }
 }
