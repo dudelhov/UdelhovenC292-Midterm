@@ -16,11 +16,8 @@ public class LaserLeft : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Ground")
         {
-            Debug.Log("poo");
             Destroy(gameObject);
         }
     }
