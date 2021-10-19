@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float jumpForce = 800;
     Rigidbody2D rb;
-    bool isGrounded;
+    bool isGrounded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +37,20 @@ public class Player : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(new Vector2(0, jumpForce));
+            if (isGrounded)
+            {
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(0, jumpForce));
+                isGrounded = false;
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
         }
     }
 
