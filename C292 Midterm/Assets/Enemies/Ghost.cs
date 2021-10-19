@@ -11,5 +11,10 @@ public class Ghost : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        if (other.gameObject.tag == "Laser")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
