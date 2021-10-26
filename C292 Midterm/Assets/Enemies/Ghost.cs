@@ -9,6 +9,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] float speed = 1f;
     Vector3 startPos;
     float timer;
+    float health = 2;
     void Start()
     {
         startPos = transform.position;
@@ -50,8 +51,16 @@ public class Ghost : MonoBehaviour
         }
         if (other.gameObject.tag == "Laser")
         {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            if (health == 1)
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+                health -= 1;
+            }
         }
     }
 }
