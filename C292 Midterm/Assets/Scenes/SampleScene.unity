@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 800
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 34828ba692227fa44ae714e83876c9d6, type: 2}
 --- !u!70 &1202709020
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2328,6 +2328,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 501279129, guid: 46758fded1b936f4ab3043870706c93a, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3535996669190620338, guid: 46758fded1b936f4ab3043870706c93a, type: 3}
       propertyPath: m_UsedByEffector
       value: 0
@@ -2342,11 +2346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8056696896124742004, guid: 46758fded1b936f4ab3043870706c93a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3781786
+      value: 26.96
       objectReference: {fileID: 0}
     - target: {fileID: 8056696896124742004, guid: 46758fded1b936f4ab3043870706c93a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1331902
+      value: -3.45
       objectReference: {fileID: 0}
     - target: {fileID: 8056696896124742004, guid: 46758fded1b936f4ab3043870706c93a, type: 3}
       propertyPath: m_LocalPosition.z
