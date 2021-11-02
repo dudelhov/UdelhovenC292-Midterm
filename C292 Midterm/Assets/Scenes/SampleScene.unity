@@ -1139,6 +1139,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1872989218}
     m_Modifications:
+    - target: {fileID: 332957057474582108, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957057482821821, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957057509063866, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957057927296001, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957057978734130, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957058048021907, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332957058112120944, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1186,6 +1210,26 @@ PrefabInstance:
     - target: {fileID: 332957058112120958, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
       propertyPath: m_Name
       value: Ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957058182529727, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957058246220139, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957058499748342, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957058840444329, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332957059130709799, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
