@@ -1209,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332957058112120958, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
       propertyPath: m_Name
-      value: Ground (1)
+      value: BeginningWall
       objectReference: {fileID: 0}
     - target: {fileID: 332957058182529727, guid: ecb80ce84a5369748a5c23cc265f5af0, type: 3}
       propertyPath: m_IsActive
