@@ -10,6 +10,14 @@ public class FireGun : MonoBehaviour
     [SerializeField] AudioSource fireSound;
     void Update()
     {
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            transform.localRotation = new Quaternion(0, 0, 45, 45);
+        }
+        else
+        {
+            transform.localRotation = new Quaternion(0, 0, 0, 0);
+        }
         if (Input.GetButtonDown("Fire1"))
         {
             fireSound.Play();
