@@ -6,7 +6,7 @@ public class EndGame : MonoBehaviour
 {
     [SerializeField] CanvasGroup endScreen;
     float timer;
-    float fadeDuration = 3;
+    float fadeDuration = 2;
     bool gameEnd = false;
     // Update is called once per frame
     void Update()
