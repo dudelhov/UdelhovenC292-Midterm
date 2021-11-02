@@ -7,4 +7,5 @@ using UnityEngine;
 public class RuntimeData : ScriptableObject
 {
     public bool isShielded;
+    public int coins;
 }

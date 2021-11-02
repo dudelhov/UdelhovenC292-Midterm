@@ -9,5 +9,6 @@ public class Initialize : MonoBehaviour
     void Awake()
     {
         data.isShielded = true;
+        data.coins = 0;
     }
 }
