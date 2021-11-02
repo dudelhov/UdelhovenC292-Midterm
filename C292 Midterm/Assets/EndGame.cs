@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
@@ -8,13 +9,16 @@ public class EndGame : MonoBehaviour
     float timer;
     float fadeDuration = 2;
     bool gameEnd = false;
-    // Update is called once per frame
     void Update()
     {
         if (gameEnd)
         {
             timer += Time.deltaTime;
             endScreen.alpha = timer / fadeDuration;
+            if (Input.GetButtonDown("Submit"))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
     void OnTriggerEnter2D(Collider2D other)
