@@ -7,10 +7,12 @@ public class FireGun : MonoBehaviour
     [SerializeField] GameObject laserPrefabRight;
     [SerializeField] GameObject laserPrefabLeft;
     [SerializeField] GameObject laserPrefabUp;
+    [SerializeField] AudioSource fireSound;
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            fireSound.Play();
             if (Input.GetAxisRaw("Vertical") == 0)
             {
                 if (transform.parent.localScale.x == 1)
