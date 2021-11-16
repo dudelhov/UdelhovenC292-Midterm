@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Rat : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     [SerializeField] RuntimeData data;
     [SerializeField] float speed = 1f;
     Vector3 startPos;
     float timer;
-    float health = 1;
+    float health = 10;
     void Start()
     {
         startPos = transform.position;
@@ -26,12 +26,10 @@ public class Rat : MonoBehaviour
         if (timer < 2)
         {
             transform.position -= new Vector3(Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (timer > 2)
         {
             transform.position += new Vector3(Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (timer > 4)
         {

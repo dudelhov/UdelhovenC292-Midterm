@@ -46,7 +46,8 @@ public class Ghost : MonoBehaviour
             }
             else if (!data.isShielded)
             {
-                SceneManager.LoadScene(0);
+                int currentScene = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentScene);
             }
         }
         if (other.gameObject.tag == "Laser")
