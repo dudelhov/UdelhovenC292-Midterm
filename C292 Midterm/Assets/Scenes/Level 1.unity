@@ -2913,7 +2913,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8010802137990791755, guid: 814c66f9778e4fc4d986b2beaf4f975f, type: 3}
       propertyPath: m_Name
-      value: EndGame
+      value: TransitionLevel
       objectReference: {fileID: 0}
     - target: {fileID: 8010802137990791756, guid: 814c66f9778e4fc4d986b2beaf4f975f, type: 3}
       propertyPath: m_RootOrder
@@ -2963,8 +2963,26 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 1268658472}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8010802137990791759, guid: 814c66f9778e4fc4d986b2beaf4f975f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 814c66f9778e4fc4d986b2beaf4f975f, type: 3}
+--- !u!1 &8010802137297836210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8010802137990791755, guid: 814c66f9778e4fc4d986b2beaf4f975f, type: 3}
+  m_PrefabInstance: {fileID: 8010802137297836209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8010802137297836211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010802137297836210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e02007521883a45ba3e8b2c5784c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8056696896206471404
 PrefabInstance:
   m_ObjectHideFlags: 0
