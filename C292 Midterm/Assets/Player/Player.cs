@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     bool isGrounded = false;
     float shieldTimer;
+    float speedUpTimer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,14 +28,50 @@ public class Player : MonoBehaviour
         if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") > 0)
         {
             //Move Right
-            transform.position += new Vector3(Time.deltaTime * moveSpeed, 0, 0);
-            transform.localScale = new Vector3(1, 1, 1);
+            if (!data.speedUp)
+            {
+                transform.position += new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            //Move Right with Speed Up
+            else if (data.speedUp)
+            {
+                speedUpTimer += Time.deltaTime;
+                if (speedUpTimer <= 4)
+                {
+                    transform.position += new Vector3(Time.deltaTime * moveSpeed * 1.5f, 0, 0);
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    data.speedUp = false;
+                    speedUpTimer = 0;
+                }
+            }
         }
         else if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
         {
             //Move Left
-            transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (!data.speedUp)
+            {
+                transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            //Move Left with Speed Up
+            else if (data.speedUp)
+            {
+                speedUpTimer += Time.deltaTime;
+                if (speedUpTimer <= 4)
+                {
+                    transform.position -= new Vector3(Time.deltaTime * moveSpeed * 1.5f, 0, 0);
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    data.speedUp = false;
+                    speedUpTimer = 0;
+                }
+            }
         }
         if (Input.GetButtonDown("Jump"))
         {

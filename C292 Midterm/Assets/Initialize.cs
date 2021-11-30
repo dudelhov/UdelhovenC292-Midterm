@@ -10,5 +10,6 @@ public class Initialize : MonoBehaviour
     {
         data.isShielded = true;
         data.coins = 0;
+        data.speedUp = false;
     }
 }
