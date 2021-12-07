@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Boss : MonoBehaviour
+public class Jumper : MonoBehaviour
 {
     [SerializeField] RuntimeData data;
-    [SerializeField] float speed = 1f;
+    [SerializeField] float speed = 3f;
+    [SerializeField] GameObject player;
     Vector3 startPos;
     float timer;
-    float jumpTimer;
-    float health = 10;
+    float health = 3;
+    bool canDamage = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -21,7 +22,6 @@ public class Boss : MonoBehaviour
     void Update()
     {
         Movement();
-        Jump();
     }
 
     void Movement()
@@ -39,23 +39,19 @@ public class Boss : MonoBehaviour
         {
             timer = 0;
         }
-    }
 
-    void Jump()
-    {
-        jumpTimer += Time.deltaTime;
-        if (jumpTimer > 3)
+
+        float distanceFromPlayer = Vector2.Distance(transform.position, player.transform.position);
+        if (Physics2D.Raycast(transform.position, Vector2.down, 2f, LayerMask.GetMask("Ground")))//different kind of ground check than the player. worked better for trigger
         {
-            if (Physics2D.Raycast(transform.position, Vector2.down, 6f, LayerMask.GetMask("Ground")))
+            canDamage = false;
+            if (distanceFromPlayer <= 5)
             {
-                rb.AddForce(new Vector2(0, 500));
-                jumpTimer = 0;
-            }
-            else
-            {
-                jumpTimer = 0f;
+                rb.AddForce(new Vector2(0, 30));
+                canDamage = true;
             }
         }
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -73,15 +69,22 @@ public class Boss : MonoBehaviour
         }
         if (other.gameObject.tag == "Laser")
         {
-            if (health == 1)
+            if (canDamage)
             {
-                Destroy(other.gameObject);
-                Destroy(gameObject);
+                if (health == 1)
+                {
+                    Destroy(other.gameObject);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                    health -= 1;
+                }
             }
             else
             {
                 Destroy(other.gameObject);
-                health -= 1;
             }
         }
     }
