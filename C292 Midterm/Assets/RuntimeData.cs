@@ -8,5 +8,6 @@ public class RuntimeData : ScriptableObject
 {
     public bool isShielded;
     public bool speedUp;
+    public bool jumpBoost;
     public int coins;
 }

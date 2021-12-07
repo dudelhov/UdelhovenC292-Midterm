@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     bool isGrounded = false;
     float shieldTimer;
     float speedUpTimer;
+    float jumpBoostTimer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -77,9 +78,27 @@ public class Player : MonoBehaviour
         {
             if (isGrounded)
             {
-                rb.velocity = Vector2.zero;
-                rb.AddForce(new Vector2(0, jumpForce));
-                isGrounded = false;
+                if (!data.jumpBoost)
+                {
+                    rb.velocity = Vector2.zero;
+                    rb.AddForce(new Vector2(0, jumpForce));
+                    isGrounded = false;
+                }
+                else if (data.jumpBoost)
+                {
+                    jumpBoostTimer += Time.deltaTime;
+                    if (jumpBoostTimer <= 4)
+                    {
+                        rb.velocity = Vector2.zero;
+                        rb.AddForce(new Vector2(0, jumpForce * 1.5f));
+                        isGrounded = false;
+                    }
+                    else
+                    {
+                        data.jumpBoost = false;
+                        jumpBoostTimer = 0;
+                    }
+                }
             }
         }
     }
